@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:13:11 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/11/13 18:16:39 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:57:42 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*tempdest;
-	unsigned char	*tempsrc;
+	char	*tempdest;
+	char	*tempsrc;
 	size_t			i;
 
-	tempdest = (unsigned char *)dest;
-	tempsrc = (unsigned char *)src;
+	tempdest = (char *)dest;
+	tempsrc = (char *)src;
 	i = 0;
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	if (dest == src || n == 0)
+		return (dest);
 	while (i < n)
 	{
 		tempdest[i] = tempsrc[i];
