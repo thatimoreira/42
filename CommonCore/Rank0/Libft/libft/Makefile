@@ -6,7 +6,11 @@ SRCS = 	ft_isdigit.c ft_toupper.c ft_tolower.c ft_isalpha.c ft_isalnum.c\
 	ft_putstr_fd.c ft_putendl_fd.c\
 	ft_strtrim.c ft_split.c ft_strmapi.c ft_striteri.c
 
+#BONUS_S =
+
 OBJS =	$(SRCS:.c=.o)
+
+OBJS_BONUS =	${BONUS_S:.c=.o}
 
 NAME =	libft.a
 
@@ -20,9 +24,12 @@ CFLAGS = -Wall -Wextra -Werror
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	 $(COMP) $(NAME) $(OBJS)
+	$(COMP) $(NAME) $(OBJS)
 
 all:	$(NAME)
+
+bonus:	$(NAME) $(OBJS_BONUS)
+	$(COMP) $(NAME) $(OBJS_BONUS)
 
 clean:
 	$(RM) $(OBJS)
@@ -33,3 +40,8 @@ fclean:	clean
 re:	fclean all
 
 .PHONY: all clean fclean re
+
+### delete this before submit the project
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
