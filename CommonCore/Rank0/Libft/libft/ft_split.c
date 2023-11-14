@@ -6,13 +6,13 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 04:47:34 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/11/13 12:03:10 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:36:04 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_num_of_substr(char const *full_str, char delimiter)
+static size_t	ft_num_of_substr(char const *full_str, char delimiter)
 {
 	int	qt_substr;
 	int	qt_delimiter;
@@ -35,7 +35,7 @@ size_t	ft_num_of_substr(char const *full_str, char delimiter)
 	return (qt_substr);
 }
 
-char	**ft_malloc_substr_arr(size_t n_substrs)
+static char	**ft_malloc_substr_arr(size_t n_substrs)
 {
 	char	**substr_arr;
 
@@ -45,7 +45,7 @@ char	**ft_malloc_substr_arr(size_t n_substrs)
 	return (substr_arr);
 }
 
-char	**ft_malloc_substrings(char **arr_subs, char const *str, char c_del)
+static char	**ft_malloc_substrings(char **arr_subs, char const *str, char c_del)
 {
 	int		arr_pos;
 	int		sub_pos;
