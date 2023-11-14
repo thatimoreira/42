@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:50:46 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/11/13 18:04:42 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/11/14 19:06:46 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	tempdest = (unsigned char *)dest;
 	tempsrc = (unsigned char *)src;
 	i = 0;
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	if (dest == src || n == 0)
+		return (dest);
 	if (*tempdest > *tempsrc)
 	{
 		while (n-- > 0)
