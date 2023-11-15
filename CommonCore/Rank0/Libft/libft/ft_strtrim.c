@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:54:30 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/11/14 14:59:03 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/11/15 03:30:52 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*trimstr;
 	size_t	i;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	start = 0;
 	end = 0;
+	i = 0;
 	while (s1[start] && ft_strchr(set, s1[start]) != NULL)
 		start++;
 	end = ft_strlen(s1);
