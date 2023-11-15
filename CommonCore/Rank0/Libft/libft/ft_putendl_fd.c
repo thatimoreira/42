@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:11:21 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/11/14 14:26:23 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/11/15 05:08:22 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (!s)
+		return;
 	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }
