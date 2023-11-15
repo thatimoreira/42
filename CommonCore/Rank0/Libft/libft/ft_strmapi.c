@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 07:06:01 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/11/13 10:57:54 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/11/15 04:53:44 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			transformed_char;
 
+	if (!s || !f)
+		return (NULL);
 	s_len = ft_strlen(s);
 	new_str = (char *)malloc((s_len + 1) * sizeof(char));
 	if (new_str == NULL)
@@ -34,10 +36,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (new_str);
 }
 /*
-int	main(void)
-{
-	#include <stdio.h>
-
 >>> You can use this function to test my code, if you want.
 char    personalized_toupper(unsigned int index, char c)
 {
@@ -49,6 +47,9 @@ char    personalized_toupper(unsigned int index, char c)
         return (c);
 }
 
+int	main(void)
+{
+	#include <stdio.h>
 
 	char const	*str;
 	char		*upper_str;
