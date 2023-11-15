@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 20:23:28 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/11/15 01:50:59 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:56:43 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	src_len;
 
 	i = 0;
-	if (size == 0 || !*dst || !*src)
+	if (size == 0 && !dst)
 		return (0);
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
