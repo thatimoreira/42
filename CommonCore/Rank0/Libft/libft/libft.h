@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 01:44:33 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/11/14 14:33:39 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:45:21 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
