@@ -6,97 +6,79 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 04:47:34 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/11/14 17:36:04 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/11/15 04:38:27 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_num_of_substr(char const *full_str, char delimiter)
+static size_t	ft_count_words(char const *full_str, char delimiter)
 {
-	int	qt_substr;
-	int	qt_delimiter;
 	int	i;
+	int	count;
 
-	qt_substr = 0;
-	qt_delimiter = 0;
 	i = 0;
+	count = 0;
 	while (full_str[i])
 	{
-		if (full_str[i++] == delimiter)
-			qt_delimiter++;
+		while (full_str[i] == delimiter)
+			i++;
+		if (!full_str[i])
+			count++;
+		while (full_str[i] && full_str[i] != delimiter)
+			i++;
 	}
-	if (full_str[0] == delimiter && full_str[i--] == delimiter)
-		qt_substr = qt_delimiter - 1;
-	else if (full_str[0] == delimiter || full_str[i--] == delimiter)
-		qt_substr = qt_delimiter;
-	else
-		qt_substr = qt_delimiter + 1;
-	return (qt_substr);
+	return (count);
 }
 
-static char	**ft_malloc_substr_arr(size_t n_substrs)
+static char	*ft_malloc_word(char const *str, char c_del)
 {
-	char	**substr_arr;
+	char	*word;
+	int		word_len;
 
-	substr_arr = (char **)malloc((n_substrs + 1) * sizeof(char *));
-	if (substr_arr == NULL)
+	word_len = 0;
+	while (str[word_len] && str[word_len] != c_del)
+		word_len++;
+	word = (char *)malloc((word_len + 1) * sizeof(char));
+	if (word == NULL)
 		return (NULL);
-	return (substr_arr);
-}
-
-static char	**ft_malloc_substrings(char **arr_subs, char const *str, char c_del)
-{
-	int		arr_pos;
-	int		sub_pos;
-	size_t	sub_len;
-
-	arr_pos = 0;
-	sub_pos = 0;
-	sub_len = 0;
-	while (str[sub_pos])
+	word_len = 0;
+	while (str[word_len] && str[word_len] != c_del)
 	{
-		while (str[sub_pos] && str[sub_pos] != c_del)
-		{
-			sub_len++;
-			sub_pos++;
-		}
-		arr_subs[arr_pos] = (char *)malloc((sub_len + 1) * sizeof(char));
-		if (arr_subs[arr_pos] == NULL)
-			return (NULL);
-		arr_subs[arr_pos][sub_len] = '\0';
-		arr_pos++;
-		sub_pos++;
+		word[word_len] = str[word_len];
+		word_len++;
 	}
-	return (arr_subs);
+	word[word_len] = '\0';
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	num_substrs;
-	char	**subs_arr;
-	size_t	subarr_pos;
-	size_t	substr_pos;
-	size_t	substr_len;
+	char	**arr;
+	size_t	arr_pos;
+	size_t	str_pos;
 
-	num_substrs = ft_num_of_substr(s, c);
-	subs_arr = ft_malloc_substr_arr(num_substrs);
-	if (subs_arr == NULL)
+	if (!s)
 		return (NULL);
-	subs_arr = ft_malloc_substrings(subs_arr, s, c);
-	subs_arr[num_substrs] = '\0';
-	subarr_pos = 0;
-	substr_pos = 0;
-	while (subs_arr[subarr_pos])
+	arr = (char **)malloc((ft_count_words(s, c) + 1) * sizeof(char *));
+	if (arr == NULL)
+		return (NULL);
+	str_pos = 0;
+	arr_pos = 0;
+	while (s[str_pos])
 	{
-		substr_len = 0;
-		while (s[substr_pos] && s[substr_pos] != c)
-			subs_arr[subarr_pos][substr_len++] = s[substr_pos++];
-		subs_arr[subarr_pos][substr_len] = '\0';
-		subarr_pos++;
-		substr_pos++;
+		while (s[str_pos] != c)
+			str_pos++;
+		if (s[str_pos])
+		{
+			arr[arr_pos] = ft_malloc_words(&s[str_pos], c);
+			arr_pos++;
+			while (s[str_pos] && s[str_pos] != c)
+				str_pos++;
+		}
 	}
-	return (subs_arr);
+	arr[arr_pos] = '\0';
+	return (arr);
 }
 /*
 int	main(void)
