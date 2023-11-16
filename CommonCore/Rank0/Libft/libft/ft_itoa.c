@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:56:52 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/11/15 15:03:09 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/11/16 00:53:43 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ size_t	ft_numlen(int number)
 
 char	*ft_itoa(int n)
 {
-	size_t  len;
-	long    num;
+	size_t	len;
+	long	num;
 	char	*num_conv;
 
 	num = n;
