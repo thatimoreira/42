@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:41:41 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/11/16 00:50:35 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/11/13 19:47:20 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	totalsz = nmemb * size;
 	if (totalsz == 0)
 		totalsz = 1;
-	totalsz = nmemb * size;
 	if (totalsz / nmemb != size)
 		return (NULL);
 	ptr_arr = (void *)malloc(totalsz);

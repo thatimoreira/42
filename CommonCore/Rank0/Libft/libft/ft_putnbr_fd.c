@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 14:36:43 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/11/16 01:04:30 by tsoares-         ###   ########.fr       */
+/*   Created: 2023/11/15 14:28:22 by tsoares-          #+#    #+#             */
+/*   Updated: 2023/11/15 14:47:16 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 }
 /*
-int     main(void)
+int	main(void)
 {
-        ft_putnbr_fd(-57, 1);
-        return (0);
+	ft_putnbr_fd(-57, 1);
+	return (0);
 }*/
