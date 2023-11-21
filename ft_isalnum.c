@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 03:52:22 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/11/13 03:57:09 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/11/21 07:00:28 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 int	ft_isalnum(int c)
 {
 	if (ft_isalpha(c) != 0 || ft_isdigit(c) != 0)
-		return (c);
+		return (1);
 	return (0);
 }
