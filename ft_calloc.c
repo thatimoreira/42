@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:41:41 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/11/13 19:47:20 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/11/21 06:29:30 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	totalsz;
 	void	*ptr_arr;
 
+	if (nmemb == 0 || size == 0)
+	{
+		nmemb = 1;
+		size = 1;
+	}
 	totalsz = nmemb * size;
 	if (totalsz == 0)
 		totalsz = 1;
