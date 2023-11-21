@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 15:19:26 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/11/14 19:17:21 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/11/21 07:43:46 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	length;
+	unsigned char	temp_c;
+	size_t			length;
 
+	temp_c = (unsigned char)c;
 	length = ft_strlen(s);
 	if (c == '\0')
 		return ((char *)(s + length));
