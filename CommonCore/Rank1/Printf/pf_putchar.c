@@ -6,13 +6,13 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 02:35:11 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 03:15:13 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 03:56:20 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_putchar(int c)
+int	pf_putchar(int c)
 {
 	return (write(1, &c, 1));
 }
