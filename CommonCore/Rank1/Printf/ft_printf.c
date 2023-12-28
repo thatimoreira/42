@@ -6,23 +6,23 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:07:14 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 02:36:22 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 02:58:57 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_libftprintf.h"
+#include "libftprintf.h"
 
-static int	def_function(char arg_type, va_list ap)
+static int	def_function(va_list ap, const char arg_type)
 {
 	int	args_amount;
 
 	args_amount = 0;
 	if (arg_type == 'c')
-		args_amount += ft_putchar(va_arg(arg_type, int));
+		args_amount += ft_putchar(va_arg(ap, int));
 	return (args_amount);
 }
 
-int	ft_printf(const char *str, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	int		i;
@@ -35,12 +35,12 @@ int	ft_printf(const char *str, ...)
 	{
 		if (format[i] == '%')
 		{
-			total_args += def_function(format[i + 1], ap);
+			total_args += def_function(ap, format[i + 1]);
 			i += 2;
 		}
 		else
 		{
-			total_args += write(1, format[i], 1);
+			total_args += write(1, &format[i], 1);
 			i++;
 		}
 	}
