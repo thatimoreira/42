@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:07:14 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 03:58:22 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 04:32:43 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static int	def_function(va_list ap, const char arg_type)
 		args_amount += pf_putchar(va_arg(ap, int));
 	else if (arg_type == 's')
 		args_amount += pf_putstr(va_arg(ap, char *));
+	else if (arg_type == 'p')
+		args_amount += pf_putptr(va_arg(ap, unsigned long long));
 	return (args_amount);
 }
 
