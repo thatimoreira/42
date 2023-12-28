@@ -6,15 +6,14 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 02:35:11 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 02:36:02 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 02:46:18 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_putchar()
-{
-}
+#include "libftprintf.h"
 
-int	main(void)
+int	ft_putchar(int c)
 {
+	write(1, &c, 1);
 	return (0);
 }
