@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:07:14 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 18:00:47 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 18:05:41 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	def_function(va_list ap, const char arg_type)
 	else if (arg_type == 'x' || arg_type == 'X')
                 args_amount += pf_puthexadec(va_arg(ap, unsigned int), arg_type);
 	else if (arg_type == '%')
-		args_amount += pf_putpercent(va_arg(ap, void));
+		args_amount += pf_putpercent();
 	return (args_amount);
 }
 
