@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 03:52:45 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 04:25:12 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 18:56:51 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,5 @@ int	pf_putstr(char *str)
 {
 	if (str)
 		return (write(1, str, pf_strlen(str)));
+	return (0);
 }
