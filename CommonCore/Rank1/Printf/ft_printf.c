@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:07:14 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 17:46:50 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 18:00:47 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	def_function(va_list ap, const char arg_type)
 	else if (arg_type == 'p')
 		args_amount += pf_putptr(va_arg(ap, void *));
 	else if (arg_type == 'd' || arg_type == 'i')
-		args_amount += pf_putnbr(va_arg(ap, int), arg_type);
+		args_amount += pf_putnbr(va_arg(ap, int));
 	else if	(arg_type == 'u')
 		args_amount += pf_put_uint(va_arg(ap, unsigned int));
 	else if (arg_type == 'x' || arg_type == 'X')
@@ -78,7 +78,7 @@ int	main(void)
 		7, 21, 3,
 		7, 21);*/
 	elements_ft = ft_printf("%c", 'z');
-	printf("\nTotal printed: %d element(s)\n\n", elements_ft); //changes to ft_printf function when %d is defined
+	ft_printf("\nTotal printed: %d element(s)\n\n", elements_ft); //changes to ft_printf function when %d is defined
 
 	printf("--------- PRINTF test ---------\n");
 	/*elements_original = printf("%s", elements_original);
