@@ -6,11 +6,11 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 06:10:20 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 07:04:57 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 07:18:03 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	pf_puthexadec(unsigned int num, format)
+int	pf_puthexadec(unsigned int num, const char format)
 {
 	int	i;
 	int	remainder;
@@ -37,6 +37,20 @@ int	pf_puthexadec(unsigned int num, format)
 				if (format == 'X')
 					num_rev[i++] = remainder - 10 + 'A';
 			}
+		i--;
+		while (i >= 0)
+			args_amount = write(1, &num_rev[i--], 1);
 	}
 	return (args_amount);
+}
+
+int main(void)
+{
+	char	*p;
+	char	*test;
+
+	test = "1234567";
+	p = &test;
+	pf_puthexadec(p, 'x');
+	return (0);
 }
