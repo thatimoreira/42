@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:16:20 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 16:33:55 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 18:01:41 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int		pf_putptr(void *ptr);
 int		pf_puthexadec(unsigned int num, const char format);
 int		pf_putnbr(int num);
 int		pf_put_uint(unsigned int num);
+int		pf_putpercent(void);
 
 #endif
