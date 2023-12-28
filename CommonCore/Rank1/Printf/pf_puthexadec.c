@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 06:10:20 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 07:36:58 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 07:45:29 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	pf_puthexadec(unsigned int num, const char format)
 		{
 			remainder = num % 16;
 			if (remainder <= 9)
-				num_rev[i] = remainder;
+				num_rev[i++] = remainder + '0';
 			else
 			{
 				if (format == 'x')
@@ -42,7 +42,7 @@ int	pf_puthexadec(unsigned int num, const char format)
 		}
 		i--;
 		while (i >= 0)
-			args_amount = write(1, &num_rev[i--], 1);
+			args_amount += write(1, &num_rev[i--], 1);
 	}
 	return (args_amount);
 }
