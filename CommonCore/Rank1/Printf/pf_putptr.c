@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 04:42:27 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 06:05:41 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 18:07:38 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ int	pf_putptr(unsigned long long ptr)
 	if (ptr == 0)
 		args_amount += write(1, "0", 1);
 	else
-	{
-		pf_printptr(ptr);
-		args_amount += pf_puthexadec(ptr);
-	}
+		args_amount += pf_puthexadec(ptr, 'x');
 	return (args_amount);
 }
