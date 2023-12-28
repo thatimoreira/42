@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 11:55:12 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 13:14:47 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 13:47:05 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	treat_negative(int n)
 	return (c_printed);
 }
 
-int	pf_putnbr(int num, const char format)
+int	pf_putnbr(int num)
 {
 	char	num_rev[12];
 	int		i;
@@ -34,13 +34,13 @@ int	pf_putnbr(int num, const char format)
 	chars_printed = 0;
 	if (num == 0)
 		return (write(1, "0", 1));
-	else if (format == 'd')
+	else if (num < 0)
 	{
 		chars_printed += treat_negative(num);
 		if (num < 0 && num != -2147483648)
 			num *= -1;
 	}
-	while (num)
+	while (num > 0)
 	{
 		num_rev[i++] = (num % 10) + 48;
 		num /= 10;
@@ -56,15 +56,15 @@ int	main (void)
 	#include <stdio.h>
 
 	int	d;
-	int	u;
+	int	i;
 	int	count_d;
-	int	count_u;
+	int	count_i;
 
 	d = -42;
-	u = 42;
-	count_d = pf_putnbr(d, 'd');
+	i = -2147483648;
+	count_d = pf_putnbr(d);
 	printf("\ncount_d:%d\n\n", count_d);
-	count_u = pf_putnbr(u, 'u');
-	printf("\ncount_u: %d\n", count_u);
+	count_i = pf_putnbr(i);
+	printf("\ncount_i: %i\n", count_i);
 	return (0);
 }*/
