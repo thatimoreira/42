@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 11:55:12 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 12:23:10 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 12:49:07 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ static int	treat_negative(int n)
 
 	c_printed = 0;
 	if (n == -2147483648)
-		return (write(1, "-2147483648", 11));
-	if (n < 0)
-		return (write(1, "-", 1));
+		c_printed += write(1, "-2147483648", 11);
+	else if (n < 0)
+		c_printed += write(1, "-", 1);
+	return (c_printed);
 }
 
 int	pf_putnbr(int num, const char format)
@@ -33,10 +34,12 @@ int	pf_putnbr(int num, const char format)
 	chars_printed = 0;
 	if (num == 0)
 		return (write(1, "0", 1));
-	if (format == 'd')
-		chars_printed += treat_negative(num, format);
-		if ((-1 * num) > 0)
+	else if (format == 'd')
+	{
+		chars_printed += treat_negative(num);
+		if (num < 0 && num != -2147483648)
 			num *= -1;
+	}
 	while (num)
 	{
 		num_rev[i++] = (num % 10) + 48;
@@ -51,6 +54,8 @@ int	pf_putnbr(int num, const char format)
 
 int	main (void)
 {
+	#include <stdio.h>
+
 	int	d;
 	int	u;
 	int	count_d;
