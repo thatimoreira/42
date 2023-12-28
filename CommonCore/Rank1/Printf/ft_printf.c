@@ -6,11 +6,21 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:07:14 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 02:02:17 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 02:29:48 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static int	def_function(char arg_type, va_list ap)
+{
+	int	args_amount;
+
+	args_amount = 0;
+	if (arg_type == 'c')
+		args_amount += ft_putchar(va_arg(arg_type, int));
+	return (args_amount);
+}
 
 int	ft_printf(const char *str, ...)
 {
@@ -48,20 +58,24 @@ int	main(void)
 
 	test = "Hello, World";
 	printf("------- FT_PRINTF test -------");
-	elements_ft = ft_printf("%s", elements_ft);
+	/*elements_ft = ft_printf("%s", elements_ft);
 	ft_printf("\nTeste0: %c\nTeste1: %s\nTeste2: %p\n
                 Teste3: %d\nTeste4: %i\nTeste5: %u\n
                 Teste6: %x\nTeste7: %X\nTeste8:%%\n\n",
 		'a', s, &s,
 		7, 21, 3,
-		7, 21);
+		7, 21);*/
+	elements_ft = ft_printf("%c", 'z');
+	ft_printf("\n%c\n\n", 'z');
 
 	printf("------- PRINTF test -------");
-	elements_original = printf("%s", elements_original);
+	/*elements_original = printf("%s", elements_original);
 	printf("\nTeste0: %c\nTeste1: %s\nTeste2: %p\n
                 Teste3: %d\nTeste4: %i\nTeste5: %u\n
                 Teste6: %x\nTeste7: %X\nTeste8:%%",
                 'a', s, &s,
                 7, 21, 3,
-                7, 21);
+                7, 21);*/
+	elements_original = printf("%c", 'z');
+	printf("\n%c\n", 'z');
 }
