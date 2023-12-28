@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:16:20 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 02:45:05 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 04:15:56 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar(int c);
+int		ft_printf(const char *format, ...);
+int		pf_putchar(int c);
+int		pf_putstr(char *str);
+size_t	pf_strlen(const char *str);
 
 #endif
