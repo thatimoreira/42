@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:07:14 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 03:10:17 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 03:29:45 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ int	main(void)
 		7, 21);*/
 	elements_ft = ft_printf("%c", 'z');
 	printf("\nElements total: %d\n", elements_ft); //changes to ft_printf function when %d is defined
-	ft_printf("%c\n\n", 'z');
 
 	printf("------- PRINTF test -------\n");
 	/*elements_original = printf("%s", elements_original);
@@ -79,6 +78,5 @@ int	main(void)
                 7, 21);*/
 	elements_original = printf("%c", 'z');
 	printf("\nElements total: %d\n", elements_original);
-	printf("%c\n", 'z');
 	return (0);
 }
