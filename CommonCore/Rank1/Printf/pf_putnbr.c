@@ -44,7 +44,6 @@ int	pf_putnbr(int num, const char format)
 	{
 		num_rev[i++] = (num % 10) + 48;
 		num /= 10;
-		chars_printed++;
 	}
 	i--;
 	while (i >= 0)
