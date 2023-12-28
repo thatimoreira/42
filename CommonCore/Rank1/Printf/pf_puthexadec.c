@@ -6,9 +6,11 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 06:10:20 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 07:18:03 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 07:20:05 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libftprintf.h"
 
 int	pf_puthexadec(unsigned int num, const char format)
 {
