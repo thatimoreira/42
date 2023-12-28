@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:07:14 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 03:29:45 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 03:38:09 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int	def_function(va_list ap, const char arg_type)
 	args_amount = 0;
 	if (arg_type == 'c')
 		args_amount += ft_putchar(va_arg(ap, int));
+	else if (arg_type == 's')
+		args_amount += ft_putstr(va_arg(ap, char *));
 	return (args_amount);
 }
 
@@ -57,7 +59,7 @@ int	main(void)
 	char	*test;
 
 	test = "Hello, World";
-	printf("------- FT_PRINTF test -------\n");
+	printf("\n------- FT_PRINTF test -------\n");
 	/*elements_ft = ft_printf("%s", elements_ft);
 	ft_printf("\nTeste0: %c\nTeste1: %s\nTeste2: %p\n
                 Teste3: %d\nTeste4: %i\nTeste5: %u\n
@@ -66,9 +68,9 @@ int	main(void)
 		7, 21, 3,
 		7, 21);*/
 	elements_ft = ft_printf("%c", 'z');
-	printf("\nElements total: %d\n", elements_ft); //changes to ft_printf function when %d is defined
+	printf("\nTotal printed: %d element(s)\n\n", elements_ft); //changes to ft_printf function when %d is defined
 
-	printf("------- PRINTF test -------\n");
+	printf("--------- PRINTF test ---------\n");
 	/*elements_original = printf("%s", elements_original);
 	printf("\nTeste0: %c\nTeste1: %s\nTeste2: %p\n
                 Teste3: %d\nTeste4: %i\nTeste5: %u\n
@@ -77,6 +79,6 @@ int	main(void)
                 7, 21, 3,
                 7, 21);*/
 	elements_original = printf("%c", 'z');
-	printf("\nElements total: %d\n", elements_original);
+	printf("\nTotal printed: %d element(s)\n\n", elements_original);
 	return (0);
 }
