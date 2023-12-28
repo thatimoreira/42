@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:07:14 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 02:32:38 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 02:36:22 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,5 @@ int	main(void)
                 7, 21);*/
 	elements_original = printf("%c", 'z');
 	printf("\n%c\n", 'z');
+	return (0);
 }
