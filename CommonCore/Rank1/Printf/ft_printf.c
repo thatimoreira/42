@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:07:14 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 02:58:57 by tsoares-         ###   ########.fr       */
+/*   Updated: 2023/12/28 03:10:17 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	main(void)
 	char	*test;
 
 	test = "Hello, World";
-	printf("------- FT_PRINTF test -------");
+	printf("------- FT_PRINTF test -------\n");
 	/*elements_ft = ft_printf("%s", elements_ft);
 	ft_printf("\nTeste0: %c\nTeste1: %s\nTeste2: %p\n
                 Teste3: %d\nTeste4: %i\nTeste5: %u\n
@@ -66,9 +66,10 @@ int	main(void)
 		7, 21, 3,
 		7, 21);*/
 	elements_ft = ft_printf("%c", 'z');
-	ft_printf("\n%c\n\n", 'z');
+	printf("\nElements total: %d\n", elements_ft); //changes to ft_printf function when %d is defined
+	ft_printf("%c\n\n", 'z');
 
-	printf("------- PRINTF test -------");
+	printf("------- PRINTF test -------\n");
 	/*elements_original = printf("%s", elements_original);
 	printf("\nTeste0: %c\nTeste1: %s\nTeste2: %p\n
                 Teste3: %d\nTeste4: %i\nTeste5: %u\n
@@ -77,6 +78,7 @@ int	main(void)
                 7, 21, 3,
                 7, 21);*/
 	elements_original = printf("%c", 'z');
-	printf("\n%c\n", 'z');
+	printf("\nElements total: %d\n", elements_original);
+	printf("%c\n", 'z');
 	return (0);
 }
