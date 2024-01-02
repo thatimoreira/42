@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:07:14 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 19:57:14 by tsoares-         ###   ########.fr       */
+/*   Updated: 2024/01/02 00:46:01 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	def_function(va_list ap, const char arg_type)
 	else if (arg_type == 'x' || arg_type == 'X')
                 args_amount += pf_puthexadec(va_arg(ap, unsigned int), arg_type);
 	else if (arg_type == '%')
-		args_amount += pf_putpercent();
+		args_amount += pf_putchar('%');
 	return (args_amount);
 }
 
@@ -38,26 +38,26 @@ int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	int		i;
-	int		total_args;
+	int		bytes_printed;
 
 	i = 0;
-	total_args = 0;
+	bytes_printed = 0;
 	va_start(ap, format);
 	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			total_args += def_function(ap, format[i + 1]);
+			bytes_printed += def_function(ap, format[i + 1]);
 			i += 2;
 		}
 		else
 		{
-			total_args += write(1, &format[i], 1);
+			bytes_printed += write(1, &format[i], 1);
 			i++;
 		}
 	}
 	va_end(ap);
-	return (total_args);
+	return (bytes_printed);
 }
 //
 //int	main(void)
