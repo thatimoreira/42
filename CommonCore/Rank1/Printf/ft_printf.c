@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:07:14 by tsoares-          #+#    #+#             */
-/*   Updated: 2024/01/02 00:46:01 by tsoares-         ###   ########.fr       */
+/*   Updated: 2024/01/04 18:33:56 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,16 @@ static int	def_function(va_list ap, const char arg_type)
 		args_amount += pf_putstr(va_arg(ap, char *));
 	else if (arg_type == 'p')
 		args_amount += pf_putptr(va_arg(ap, void *));
+//		 args_amount += pf_unsitoa(va_arg(ap, void *), 16);
 	else if (arg_type == 'd' || arg_type == 'i')
 		args_amount += pf_putnbr(va_arg(ap, int));
 	else if	(arg_type == 'u')
 		args_amount += pf_put_uint(va_arg(ap, unsigned int));
+//		args_amount += pf_unsitoa(va_arg(ap, unsigned int), 10);
 	else if (arg_type == 'x' || arg_type == 'X')
                 args_amount += pf_puthexadec(va_arg(ap, unsigned int), arg_type);
 	else if (arg_type == '%')
-		args_amount += pf_putchar('%');
+		args_amount += write(1, "%", 1);
 	return (args_amount);
 }
 
