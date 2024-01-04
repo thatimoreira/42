@@ -1,6 +1,6 @@
 SRCS =	ft_printf.c pf_putchar.c pf_putstr.c pf_putptr.c \
 	pf_putnbr.c pf_put_uint.c pf_puthexadec.c \
-	pf_putpercent.c pf_strlen.c
+	pf_strlen.c pf_numlen.c
 
 OBJS = 	$(SRCS:.c=.o)
 
