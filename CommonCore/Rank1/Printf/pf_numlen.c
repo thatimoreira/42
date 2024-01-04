@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_putptr.c                                        :+:      :+:    :+:   */
+/*   pf_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/28 04:42:27 by tsoares-          #+#    #+#             */
-/*   Updated: 2024/01/04 19:18:35 by tsoares-         ###   ########.fr       */
+/*   Created: 2024/01/04 19:46:33 by tsoares-          #+#    #+#             */
+/*   Updated: 2024/01/04 19:52:02 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	pf_putptr(void *ptr)
+size_t	pf_numlen(unsigned long long num)
 {
-	int			bytes_printed;
-	unsigned long long	p;
+	size_t	num_len;
 
-	bytes_printed = 0;
-	p = (unsigned long long)ptr;
-	if (p == 0)
-		bytes_printed += write(1, "(nil)", 5);
-	else
+	num_len = 0;
+	while (num)
 	{
-		bytes_printed = write(1, "0x", 2);
-		bytes_printed += pf_puthexadec((unsigned long long)p, 'x');
+		num /= 16;
+		num_len++;
 	}
-	return (bytes_printed);
+	return (num_len);
 }
