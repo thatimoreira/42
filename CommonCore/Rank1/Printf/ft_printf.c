@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:07:14 by tsoares-          #+#    #+#             */
-/*   Updated: 2024/01/05 09:16:45 by tsoares-         ###   ########.fr       */
+/*   Updated: 2024/01/05 09:23:56 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	main(void)
 	elements_ft = 0;
 	elements_original = 0;
 	printf("\n************* COMPARISON TESTS *************\n");
-	ft_printf("\n----------------- Test0: c -----------------\n");
+	ft_printf("\n-------------------- Test0: c --------------------\n");
 	ft_printf("ft_printf: ");
 	elements_ft = ft_printf("%c", c);
 	ft_printf(" >>> Total printed: %d element(s)\n\n", elements_ft);
@@ -92,7 +92,7 @@ int	main(void)
 	elements_original = printf("%c", c);
 	printf(" >>> Total printed: %d element(s)\n\n", elements_original);
 
-	ft_printf("\n----------------------- Test1: s -----------------------\n");
+	ft_printf("\n-------------------------- Test1: s --------------------------\n");
 	ft_printf("ft_printf: ");
         elements_ft = ft_printf("%s", s);
         ft_printf(" >>> Total printed: %d element(s)\n\n", elements_ft);
@@ -100,7 +100,7 @@ int	main(void)
         elements_original = printf("%s", s);
         printf(" >>> Total printed: %d element(s)\n\n", elements_original);
 
-	ft_printf("\n------------------------ Test2: p ------------------------\n");
+	ft_printf("\n--------------------------- Test2: p ---------------------------\n");
 	ft_printf("ft_printf: ");
         elements_ft = ft_printf("%p", &s);
         ft_printf(" >>> Total printed: %d element(s)\n\n", elements_ft);
@@ -108,7 +108,7 @@ int	main(void)
         elements_original = printf("%p", &s);
         printf(" >>> Total printed: %d element(s)\n\n", elements_original);
 
-	ft_printf("\n----------------- Test3: d -----------------\n");
+	ft_printf("\n-------------------- Test3: d --------------------\n");
 	ft_printf("ft_printf: ");
         elements_ft = ft_printf("%d", d);
         ft_printf(" >>> Total printed: %d element(s)\n\n", elements_ft);
@@ -116,8 +116,7 @@ int	main(void)
         elements_original = printf("%d", d);
         printf(" >>> Total printed: %d element(s)\n", elements_original);
 
-
-	ft_printf("\n------------------ Test4: i ------------------\n");
+	ft_printf("\n--------------------- Test4: i ---------------------\n");
 	ft_printf("ft_printf: ");
         elements_ft = ft_printf("%i", i);
         ft_printf(" >>> Total printed: %d element(s)\n\n", elements_ft);
@@ -125,7 +124,7 @@ int	main(void)
         elements_original = printf("%i", i);
         printf(" >>> Total printed: %d element(s)\n", elements_original);
 
-	ft_printf("\n----------------- Test5: u -----------------\n");
+	ft_printf("\n-------------------- Test5: u --------------------\n");
 	ft_printf("ft_printf: ");
         elements_ft = ft_printf("%u", u);
         ft_printf(" >>> Total printed: %d element(s)\n\n", elements_ft);
@@ -133,7 +132,7 @@ int	main(void)
         elements_original = printf("%u", u);
         printf(" >>> Total printed: %d element(s)\n", elements_original);
 
-	ft_printf("\n----------------- Test6: x -----------------\n");
+	ft_printf("\n-------------------- Test6: x --------------------\n");
 	ft_printf("ft_printf: ");
         elements_ft = ft_printf("%x", x);
         ft_printf(" >>> Total printed: %d element(s)\n\n", elements_ft);
@@ -141,7 +140,7 @@ int	main(void)
         elements_original = printf("%x", x);
         printf(" >>> Total printed: %d element(s)\n", elements_original);
 
-	ft_printf("\n----------------- Test7: X -----------------\n");
+	ft_printf("\n-------------------- Test7: X --------------------\n");
 	ft_printf("ft_printf: ");
         elements_ft = ft_printf("%X", upperx);
         ft_printf(" >>> Total printed: %d element(s)\n\n", elements_ft);
@@ -149,7 +148,7 @@ int	main(void)
         elements_original = printf("%X", upperx);
         printf(" >>> Total printed: %d element(s)\n", elements_original);
 
-	ft_printf("\n------------------ Test8: % ------------------\n");
+	ft_printf("\n--------------------- Test8: % ---------------------\n");
 	ft_printf("ft_printf: ");
         elements_ft = ft_printf("%%");
         ft_printf(" >>> Total printed: %d element(s)\n\n", elements_ft);
