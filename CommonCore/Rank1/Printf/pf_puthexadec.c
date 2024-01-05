@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 06:10:20 by tsoares-          #+#    #+#             */
-/*   Updated: 2024/01/05 14:01:01 by tsoares-         ###   ########.fr       */
+/*   Updated: 2024/01/05 14:07:17 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,48 +68,50 @@ int	main(void)
 
 	unsigned int	n1;
 	int		count_ft;
+	int		count_original;
 
 	n1 = 0;
 	count_ft = 0;
+	count_original = 0;
 	printf("\n******* COMPARISON TESTS *******\n");
 	printf("\n------- TEST 0: %u -------\n", n1);
 	count_ft = pf_puthexadec(n1, 'x');
 	printf(" >>> chars printed: %d\n", count_ft);
-	count_ft = printf("%x", n1);
-        printf(" >>> chars printed: %d\n\n", count_ft);
+	count_original = printf("%x", n1);
+        printf(" >>> chars printed: %d\n\n", count_original);
 	count_ft = pf_puthexadec(n1, 'X');
         printf(" >>> chars printed: %d\n", count_ft);
-	count_ft = printf("%X", n1);
-        printf(" >>> chars printed: %d\n\n", count_ft);
+	count_original = printf("%X", n1);
+        printf(" >>> chars printed: %d\n\n", count_original);
 
 	printf("\n----- TEST 1: %u -----\n", INT_MIN);
         count_ft = pf_puthexadec(INT_MIN, 'x');
         printf(" >>> chars printed: %d\n", count_ft);
-	count_ft = printf("%x", INT_MIN);
-        printf(" >>> chars printed: %d\n\n", count_ft);
+	count_original = printf("%x", INT_MIN);
+        printf(" >>> chars printed: %d\n\n", count_original);
 	count_ft = pf_puthexadec(INT_MIN, 'X');
         printf(" >>> chars printed: %d\n", count_ft);
-        count_ft = printf("%X", INT_MIN);
-        printf(" >>> chars printed: %d\n\n", count_ft);
+        count_original = printf("%X", INT_MIN);
+        printf(" >>> chars printed: %d\n\n", count_original);
 
 	printf("\n----- TEST 2: %u -----\n", INT_MAX);
 	count_ft = pf_puthexadec(INT_MAX, 'x');
         printf(" >>> chars printed: %d\n", count_ft);
-	count_ft = printf("%x", INT_MAX);
-        printf(" >>> chars printed: %d\n\n", count_ft);
+	count_original = printf("%x", INT_MAX);
+        printf(" >>> chars printed: %d\n\n", count_original);
         count_ft = pf_puthexadec(INT_MAX, 'X');
         printf(" >>> chars printed: %d\n", count_ft);
-        count_ft = printf("%X", INT_MAX);
-        printf(" >>> chars printed: %d\n\n", count_ft);
+        count_original = printf("%X", INT_MAX);
+        printf(" >>> chars printed: %d\n\n", count_original);
 
 	printf("\n----- TEST 3: %u -----\n", UINT_MAX);
         count_ft = pf_puthexadec(UINT_MAX, 'x');
         printf(" >>> chars printed: %d\n", count_ft);
-        count_ft = printf("%x", UINT_MAX);
-        printf(" >>> chars printed: %d\n\n", count_ft);
+        count_original = printf("%x", UINT_MAX);
+        printf(" >>> chars printed: %d\n\n", count_original);
         count_ft = pf_puthexadec(UINT_MAX, 'X');
         printf(" >>> chars printed: %d\n", count_ft);
-        count_ft = printf("%X", UINT_MAX);
-        printf(" >>> chars printed: %d\n\n", count_ft);
+        count_original = printf("%X", UINT_MAX);
+        printf(" >>> chars printed: %d\n\n", count_original);
 	return (0);
 }*/
