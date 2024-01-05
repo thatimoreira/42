@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 11:55:12 by tsoares-          #+#    #+#             */
-/*   Updated: 2024/01/05 14:23:30 by tsoares-         ###   ########.fr       */
+/*   Updated: 2024/01/05 14:24:29 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	pf_putnbr(int num)
 		chars_printed += write(1, &num_rev[i--], 1);
 	return (chars_printed);
 }
-
+/*
 int	main (void)
 {
 	#include <stdio.h>
@@ -105,4 +105,4 @@ int	main (void)
         count_original = pf_putnbr(UINT_MAX);
         printf(" >>> count_i: %i char(s) printed\n\n", count_original);
 	return (0);
-}
+}*/
