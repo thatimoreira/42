@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 06:10:20 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 08:09:17 by tsoares-         ###   ########.fr       */
+/*   Updated: 2024/01/04 21:23:38 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,31 +21,42 @@ char	def_format(int remainder, const char arg_type)
 	return (remainder);
 }
 
-int	pf_puthexadec(unsigned int num, const char format)
+int	pf_printhex(unsigned int num, const char format)
 {
-	int	i;
+	size_t	len;
+	int	count;
 	int	remainder;
-	int     args_amount;
-	char	num_rev[20];
+	char	*num_conv;
 
-	i = 0;
 	remainder = 0;
-	if (num == 0)
-		args_amount = write(1, "0", 1);
-	else
+	len = pf_numlen(num);
+	count = len;
+	num_conv = (char *)malloc((len + 1) * sizeof(char));
+	if (num_conv == NULL)
+		return (0);
+	num_conv[--len] = '\0';
+	while (num)
 	{
-		while (num)
-		{
-			remainder = num % 16;
-			if (remainder <= 9)
-				num_rev[i++] = remainder + '0';
-			else
-				num_rev[i++] = def_format(remainder, format);
-			num /= 16;
-		}
-		i--;
-		while (i >= 0)
-			args_amount += write(1, &num_rev[i--], 1);
+		remainder = num % 16;
+		if (remainder < 10)
+			num_conv[len--] = remainder + '0';
+		else
+			num_conv[len--] = def_format(remainder, format);
+		num /= 16;
 	}
-	return (args_amount);
+	write(1, num_conv, count);
+	free(num_conv);
+	return (count);
+}
+
+int     pf_puthexadec(unsigned int num, const char format)
+{
+	int	bytes_printed;
+
+	bytes_printed = 0;
+	if (num == 0)
+		bytes_printed = write(1, "0", 1);
+	else
+		bytes_printed = pf_printhex(num, format);
+	return (bytes_printed);
 }
