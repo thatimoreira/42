@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 16:30:01 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 17:23:38 by tsoares-         ###   ########.fr       */
+/*   Updated: 2024/01/05 12:41:49 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,45 @@ int	pf_put_uint(unsigned int num)
 int	main(void)
 {
 	#include <stdio.h>
+	#include <limits.h>
 
 	unsigned int	n;
-	int		count;
+	unsigned int	int_min;
+	unsigned int	int_max;
+	unsigned int	uint_max;
+	int		count_ft;
+	int		count_original;
 
-	n = 111;
-	count = 0;
-	count = pf_put_uint(n);
-	printf("\ncount = %u\n", count);
+	n = 0;
+	int_min = INT_MIN;
+	int_max = INT_MAX;
+	uint_max = UINT_MAX;
+	count_ft = 0;
+	count_original;
+
+	printf("\n***** COMPARISON TESTS *****\n");
+	printf("\n-------------- TEST0: 0 --------------\n");
+	count_ft = pf_put_uint(n);
+	printf(" >>> chars printed: %u\n", count_ft);
+	count_original = printf("%u", n);
+	count_original = printf(" >>> chars printed: %u\n", count_original);
+
+	printf("\n----------- TEST1: int_min -----------\n");
+        count_ft = pf_put_uint(int_min);
+        printf(" >>> chars printed: %u\n", count_ft);
+        count_original = printf("%u", int_min);
+        count_original = printf(" >>> chars printed: %u\n", count_original);
+
+	printf("\n----------- TEST2: int_max -----------\n");
+        count_ft = pf_put_uint(int_max);
+        printf(" >>> chars printed: %u\n", count_ft);
+        count_original = printf("%u", int_max);
+        count_original = printf(" >>> chars printed: %u\n", count_original);
+
+	printf("\n---------- TEST4: uint_max ----------\n");
+        count_ft = pf_put_uint(uint_max);
+        printf(" >>> chars printed: %u\n", count_ft);
+        count_original = printf("%u", uint_max);
+        count_original = printf(" >>> chars printed: %u\n", count_original);
 	return (0);
 }*/
