@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 11:55:12 by tsoares-          #+#    #+#             */
-/*   Updated: 2023/12/28 13:47:05 by tsoares-         ###   ########.fr       */
+/*   Updated: 2024/01/05 14:23:30 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,21 +50,59 @@ int	pf_putnbr(int num)
 		chars_printed += write(1, &num_rev[i--], 1);
 	return (chars_printed);
 }
-/*
+
 int	main (void)
 {
 	#include <stdio.h>
+	#include <limits.h>
 
-	int	d;
-	int	i;
 	int	count_d;
 	int	count_i;
+	int	count_original;
 
-	d = -42;
-	i = -2147483648;
-	count_d = pf_putnbr(d);
-	printf("\ncount_d:%d\n\n", count_d);
-	count_i = pf_putnbr(i);
-	printf("\ncount_i: %i\n", count_i);
+	count_d = 0;
+	count_i = 0;
+	count_original = 0;
+
+	printf("\n******* COMPARISON TESTS *******\n");
+	printf("\n----------- TEST 0: %d -----------\n", 0);
+	count_d = pf_putnbr(0);
+        printf(" >>> count_d: %d char(s) printed\n", count_d);
+	count_original = pf_putnbr(0);
+        printf(" >>> count_d: %d char(s) printed\n\n", count_original);
+	count_i = pf_putnbr(0);
+        printf(" >>> count_i: %i char(s) printed\n", count_i);
+	count_original = pf_putnbr(0);
+        printf(" >>> count_i: %i char(s) printed\n\n", count_original);
+
+        printf("\n----------- TEST 1: %d -----------\n", INT_MIN);
+        count_d = pf_putnbr(INT_MIN);
+        printf(" >>> count_d: %d char(s) printed\n", count_d);
+        count_original = pf_putnbr(INT_MIN);
+        printf(" >>> count_d: %d char(s) printed\n\n", count_original);
+        count_i = pf_putnbr(INT_MIN);
+        printf(" >>> count_i: %i char(s) printed\n", count_i);
+        count_original = pf_putnbr(INT_MIN);
+        printf(" >>> count_i: %i char(s) printed\n\n", count_original);
+
+	printf("\n----------- TEST 2: %d -----------\n", INT_MAX);
+        count_d = pf_putnbr(INT_MAX);
+        printf(" >>> count_d: %d char(s) printed\n", count_d);
+        count_original = pf_putnbr(INT_MAX);
+        printf(" >>> count_d: %d char(s) printed\n\n", count_original);
+        count_i = pf_putnbr(INT_MAX);
+        printf(" >>> count_i: %i char(s) printed\n", count_i);
+        count_original = pf_putnbr(INT_MAX);
+        printf(" >>> count_i: %i char(s) printed\n\n", count_original);
+
+	printf("\n----------- TEST 3: %d -----------\n", UINT_MAX);
+        count_d = pf_putnbr(UINT_MAX);
+        printf(" >>> count_d: %d char(s) printed\n", count_d);
+        count_original = pf_putnbr(UINT_MAX);
+        printf(" >>> count_d: %d char(s) printed\n\n", count_original);
+        count_i = pf_putnbr(UINT_MAX);
+        printf(" >>> count_i: %i char(s) printed\n", count_i);
+        count_original = pf_putnbr(UINT_MAX);
+        printf(" >>> count_i: %i char(s) printed\n\n", count_original);
 	return (0);
-}*/
+}
