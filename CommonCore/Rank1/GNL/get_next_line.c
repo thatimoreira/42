@@ -6,13 +6,13 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:42:16 by tsoares-          #+#    #+#             */
-/*   Updated: 2024/01/20 00:16:56 by tsoares-         ###   ########.fr       */
+/*   Updated: 2024/01/20 00:18:44 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char     read_lines(int fldesc, char *buf, static char ***temp_buf)
+static char     read_lines(int fldesc, char *buf, static char *temp_buf)
 {
         ssize_t         chars_read;
 
@@ -22,7 +22,7 @@ static char     read_lines(int fldesc, char *buf, static char ***temp_buf)
 
 int     *get_next_line(int fd)
 {
-        static char     **temp_buffer;
+        static char     *temp_buffer;
         char            *buffer;
         char            *line_read
 
