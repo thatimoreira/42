@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:19:12 by tsoares-          #+#    #+#             */
-/*   Updated: 2024/01/18 18:47:00 by tsoares-         ###   ########.fr       */
+/*   Updated: 2024/01/21 01:15:01 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,18 @@
 
 #include <unistd.h>
 #include <stdlib.h>
-#include <fcntl.h> //to use open function
-#include <types.h> // to use ssize_t
+#include <sys/types.h> // to use ssize_t
 
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 84
+# define BUFFER_SIZE 21
 # endif
 
-char	*get_next_line(int fd);
+size_t		ft_strlen(const char *s);
+char		*ft_strcpy(char *dest, const char *src);
+char		*ft_strdup(const char *str);
+char		*ft_strjoin(char const *str1, char const *str2);
+char		*ft_substr(const char *stg, unsigned int start, size_t len);
+char		*find_n(const char *st, int c);
+char		*get_next_line(int fd);
 
 # endif
