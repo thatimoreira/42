@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 21:52:08 by tsoares-          #+#    #+#             */
-/*   Updated: 2024/01/21 01:04:37 by tsoares-         ###   ########.fr       */
+/*   Updated: 2024/01/27 22:32:14 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,24 +47,24 @@ char	*ft_strdup(const char *str)
 	return (dst);
 }
 
-char	*ft_strjoin(char const *str1, char const *str2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 	size_t	i;
 	size_t	s_pos;
 
-	if (!str1 || !str2)
+	if (!s1 || !s2)
 		return (NULL);
 	i = 0;
 	s_pos = 0;
-	str = (char *)malloc(((ft_strlen(str1) + ft_strlen(str2)) + 1) * sizeof(char));
+	str = (char *)malloc(((ft_strlen(s1) + ft_strlen(s2)) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-	while (str1[i])
-		str[i++] = str1[s_pos++];
+	while (s1[i])
+		str[i++] = s1[s_pos++];
 	s_pos = 0;
-	while (str2[s_pos])
-		str[i++] = str2[s_pos++];
+	while (s2[s_pos])
+		str[i++] = s2[s_pos++];
 	str[i] = '\0';
 	return (str);
 }
